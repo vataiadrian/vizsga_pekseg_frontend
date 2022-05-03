@@ -1,0 +1,44 @@
+<h3>Termékek kezelése</h3>
+<hr>
+<div ng-controller="productCtrl">
+    <div ng-include="'views/modal.html'"></div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" .......................................>
+        Új termék felvétele
+    </button>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Sorszám</th>
+                <th>Termék neve</th>
+                <th>Részletek</th>
+                <th class="text-end">Kalória</th>
+                <th class="text-end">Ár</th>
+                <th class="text-end">Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ....................................................>
+                <td>{{$index+1}}</td>
+                <td class="text-nowrap">{{termek.nev}}</td>
+                <td class="fw-lighter small">{{termek.reszletek}}</td>
+                <td class="text-end text-nowrap">{{termek.kaloria | number: 0}} kcal</td>
+                <td class="text-end text-nowrap">{{termek.ar |number:0}} {{penznem}}</td>
+                <td class="text-end text-nowrap">
+                    <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" .......................................>
+                        Módosítás
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" .......................................>
+                        Törlés
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">Összesen: ................................... féle termék</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>

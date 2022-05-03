@@ -1,0 +1,35 @@
+<h3>Rendelhető termékek listája</h3>
+<hr>
+<div ng-controller="productCtrl">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Termékkép</th>
+                <th>Termék neve / Leírás</th>
+                
+                <th class="text-end">Kalória</th>
+                <th class="text-end">Ár</th>
+                <th class="text-end">Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="termek in termekek">
+                <td><img src="img/{{termek.kep}}" alt="{{termek.kep}}" class="img img-thumbnail preview"></td>
+                <td><strong>{{termek.nev}}</strong><br>
+                <span class="fw-lighter small"> {{termek.reszletek}}</span></td>
+                <td class="text-end text-nowrap">{{termek.kaloria | number:0}} kcal</td>
+                <td class="text-end text-nowrap">{{termek.ar | number:0}} {{penznem}}</td>
+                <td class="text-end text-nowrap">
+                    <input type="number" ng-model="db[$index]" min="0" class="form-control kosarba">
+                    <button class="btn btn-primary btn-sm" ng-click="kosarba($index)">Ok</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">Összesen: {{termekek.length}} féle termék</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>

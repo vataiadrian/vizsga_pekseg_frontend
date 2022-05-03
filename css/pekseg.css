@@ -1,0 +1,51 @@
+header {
+    margin: 40px 0;
+}
+
+.kosarba {
+    width: 80px !important;
+    display: inline !important;
+}
+
+.navbar{
+    box-shadow: 0 0 10px black;
+}
+
+header {
+    background-image: url('../img/header.jpg');
+    background-position: center center;
+    background-size: cover;
+    
+    padding: 120px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px black;
+    font-size: 300%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: silver;
+    letter-spacing: 3px;
+    color: rgb(80, 80, 80);
+}
+
+#grafikon,
+#naptar {
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.preview{
+    width:150px;
+}
+
+.small{
+    font-size: 90%;
+}
+
+em{
+    color: red;
+}

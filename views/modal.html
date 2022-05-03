@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{modaltitle}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nev" placeholder="Termék neve:" ng-model="termek.nev" ng-disabled="mode==3">
+                    <label for="nev">Termék neve:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="reszletek" placeholder="Részletek:" ng-model="termek.reszletek" ng-disabled="mode==3">
+                    <label for="reszletek">Részletek:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="kal" placeholder="Kalória:" ng-model="termek.kaloria" ng-disabled="mode==3">
+                    <label for="kal">Kalória:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="ar" placeholder="Ár:" ng-model="termek.ar" ng-disabled="mode==3">
+                    <label for="ar">Ár:</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégsem</button>
+                <button type="button" class="btn btn-{{modalType}}" ng-click="submit()" data-bs-dismiss="modal">{{modalBtn}}</button>
+            </div>
+        </div>
+    </div>
+</div>

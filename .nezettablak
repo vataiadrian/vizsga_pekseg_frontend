@@ -1,0 +1,40 @@
+CREATE OR REPLACE VIEW rendelesInfo AS
+SELECT
+	rendelesek.ID AS ID,
+    rendelesek.datum AS datum,
+    felhasznalok.nev AS nev,
+    felhasznalok.cim AS cim, 
+    felhasznalok.telefonszam AS tel,
+    rendelesek.vegosszeg AS vegosszeg
+FROM rendelesek
+INNER JOIN felhasznalok ON felhasznalok.id = rendelesek.felhID
+
+
+CREATE OR REPLACE VIEW rendelesReszletek AS
+SELECT
+	rendelestetelek.ID AS ID,
+    rendelestetelek.rendelesID AS rendelesID,	
+    termekek.nev AS termeknev,	
+    rendelestetelek.db AS menny,
+    termekek.ar AS egysar
+FROM rendelestetelek
+INNER JOIN termekek ON termekek.ID = rendelestetelek.tetelID
+
+
+CREATE OR REPLACE VIEW eladasok AS
+SELECT DISTINCT
+	termekek.ID AS `tID`,
+	termekek.nev AS `termeknev`,
+	termekek.ar AS `egysar`,
+    (SELECT SUM(rendelestetelek.db) FROM rendelestetelek WHERE rendelestetelek.tetelID=`tID`) AS `menny`,
+	(SELECT SUM(termekek.ar * rendelestetelek.db) FROM rendelestetelek INNER JOIN termekek ON termekek.ID=rendelestetelek.tetelID WHERE termekek.ID=`tID`) AS `ossz`
+FROM rendelestetelek      
+INNER JOIN termekek ON termekek.ID = rendelestetelek.tetelID 
+
+
+CREATE OR REPLACE VIEW statisztika AS
+SELECT
+    DATE(rendelesek.datum) AS datum,
+    SUM(rendelesek.vegosszeg) AS bevetel	
+FROM rendelesek 
+GROUP BY DATE(rendelesek.datum)

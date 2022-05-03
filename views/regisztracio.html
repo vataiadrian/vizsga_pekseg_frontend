@@ -1,0 +1,30 @@
+<h3 class="text-center">Regisztráció az oldalra</h3>
+<hr>
+<p class="text-center">Felhasználói profil regisztrációjához add meg az alábbi adatokat. A <em>*</em> -al jelölt adatok megadása kötelező!</p>
+<div ng-controller="loginCtrl">
+    <div class="form-floating mb-3 col-md-6 offset-md-3">
+        <input type="text" class="form-control" id="nev" placeholder="Név:" ng-model="user.name">
+        <label for="nev">Név: <em>*</em></label>
+    </div>
+    <div class="form-floating mb-3 col-md-6 offset-md-3">
+        <input type="email" class="form-control" id="email" placeholder="E-mail cím:" ng-model="user.email">
+        <label for="email">E-mail cím: <em>*</em></label>
+    </div>
+    <div class="form-floating mb-3 col-md-6 offset-md-3">
+        <input type="text" class="form-control" id="cim" placeholder="Cím:" ng-model="user.address">
+        <label for="cim">Cím: </label>
+    </div>
+    <div class="form-floating mb-3 col-md-6 offset-md-3">
+        <input type="text" class="form-control" id="tel" placeholder="Telefonszám:" ng-model="user.phone">
+        <label for="tel">Telefonszám:</label>
+    </div>
+    <div class="form-floating mb-3 col-md-6 offset-md-3">
+        <input type="password" class="form-control" id="pass1" placeholder="Jelszó:" ng-model="user.pass1">
+        <label for="tel">Jelszó: <em>*</em></label>
+    </div>
+    <div class="form-floating mb-3 col-md-6 offset-md-3">
+        <input type="password" class="form-control" id="pass2" placeholder="Jelszó megerősítése:" ng-model="user.pass2">
+        <label for="tel">Jelszó megerősítése: <em>*</em></label>
+    </div>
+    <button class="btn btn-primary mb-3 offset-md-3" ng-click="regist()">Registráció elküldése</button>
+</div>

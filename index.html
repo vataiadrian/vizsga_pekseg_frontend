@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu" .................................>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>......................</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stylesheets -->
+    .................................................
+    .................................................
+    .................................................
+  
+    <!-- Frameworks javascript files -->
+    .................................................
+    .................................................
+    .................................................
+
+    <!-- Components javascript files -->
+    .................................................
+    .................................................
+    .................................................
+    .................................................
+    .................................................
+    .................................................
+   
+    <script src="js/pekseg.js"></script>
+    <script src="js/dbFactory.js"></script>
+
+    <!-- AngularJS controller files -->
+    .................................................
+    .................................................
+    .................................................
+    .................................................
+    .................................................
+    .................................................
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menü</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- menü items -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#!/">Terméklista</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#!/kosar">Kosár <span class="badge rounded-pill bg-danger">{{kosarDB}}</span></a>
+                    </li>
+                    <li class="nav-item" ........................................>
+                        <a class="nav-link" aria-current="page" href="#!/reg">Regisztráció</a>
+                    </li>
+                    <!-- user functions -->
+                    <li class="nav-item" ........................................>
+                        <a class="nav-link" aria-current="page" href="#!/rendelesek">Rendeléseim</a>
+                    </li>
+                    <!-- admin functions -->
+                    <li class="nav-item" ........................................>
+                        <a class="nav-link" aria-current="page" href="#!/termekek">Termékek</a>
+                    </li>
+                    <li class="nav-item" ........................................>
+                        <a class="nav-link" aria-current="page" href="#!/felhasznalok">Felhasználók</a>
+                    </li>
+                    <li class="nav-item" ........................................>
+                        <a class="nav-link" aria-current="page" href="#!/rendelesek">Rendelések</a>
+                    </li>
+                    <li class="nav-item" ........................................>
+                        <a class="nav-link" aria-current="page" href="#!/stat">Statisztika</a>
+                    </li>
+
+                </ul>
+                <div class="d-flex" ng-controller="loginCtrl" ng-if="!loggedIn">
+                    <input class="form-control me-2" type="text" ng-model="email" placeholder="E-mail cím...">
+                    <input class="form-control me-2" type="password" ng-model="passwd" placeholder="Jelszó...">
+                    <button class="btn btn-primary" type="button" ng-click="login()">Belépés</button>
+                </div>
+                <div class="d-flex" ng-controller="loginCtrl" ng-if="loggedIn">
+                    <input class="form-control me-2" type="text" ng-model="loggedUser.nev" disabled>
+                    <button class="btn btn-primary" type="button" ng-click="logout()">Kilépés</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container-fluid">
+        <div class="container">
+            <h1>......................</h1>
+            <h3>......................</h3>
+        </div>
+    </header>
+
+    <main class="container" ng-view>
+
+    </main>
+
+    <footer class="container-fluid">
+        <div class="container">
+            .................................................
+        </div>
+    </footer>
+</body>
+
+</html>
