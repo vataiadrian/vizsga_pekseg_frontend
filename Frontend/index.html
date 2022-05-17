@@ -1,43 +1,41 @@
 <!DOCTYPE html>
-<html lang="hu" .................................>
+<html lang="hu" ng-app="pekseg">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>......................</title>
+    <title>{{title}}</title>
 
     <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Stylesheets -->
-    .................................................
-    .................................................
-    .................................................
+    <link rel="stylesheet" href="../Frontend/css/pekseg.css">
+    <link rel="stylesheet" href="../Frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Frontend/css/fullcalendar.css">
   
     <!-- Frameworks javascript files -->
-    .................................................
-    .................................................
-    .................................................
+    <script src="../Frontend/js/bootstrap.min.js"></script>
+    <script src="../Frontend/js/angular.min.js"></script>
+    <script src="../Frontend/js/canvasjs.min.js"></script>
 
     <!-- Components javascript files -->
-    .................................................
-    .................................................
-    .................................................
-    .................................................
-    .................................................
-    .................................................
-   
+    <script src="../Frontend/js/angular-route.min.js"></script>
+    <script src="../Frontend/js/fullcalendar.js"></script>
+    <script src="../Frontend/js/jquery.min.js"></script>
+    <script src="../Frontend/js/moment.min.js"></script>
+    <script src="../Frontend/js/sha1.js"></script>
     <script src="js/pekseg.js"></script>
     <script src="js/dbFactory.js"></script>
 
     <!-- AngularJS controller files -->
-    .................................................
-    .................................................
-    .................................................
-    .................................................
-    .................................................
-    .................................................
+<script src="./js/controllers/cartCtrl.js"></script>
+<script src="./js/controllers/loginCtrl.js"></script>
+<script src="./js/controllers/orderCtrl.js"></script>
+<script src="./js/controllers/productCtrl.js"></script>
+<script src="./js/controllers/statCtrl.js"></script>
+<script src="./js/controllers/userCtrl.js"></script>
 
 </head>
 
@@ -58,15 +56,15 @@
                         <a class="nav-link" aria-current="page" href="#!/kosar">Kosár <span class="badge rounded-pill bg-danger">{{kosarDB}}</span></a>
                     </li>
                     <li class="nav-item" ........................................>
-                        <a class="nav-link" aria-current="page" href="#!/reg">Regisztráció</a>
+                        <a class="nav-link" aria-current="page" href="#!/reg" ng-if="loggedIn == false">Regisztráció</a>
                     </li>
                     <!-- user functions -->
                     <li class="nav-item" ........................................>
-                        <a class="nav-link" aria-current="page" href="#!/rendelesek">Rendeléseim</a>
+                        <a class="nav-link" aria-current="page" href="#!/rendelesek" ng-if="loggedIn == true">Rendeléseim</a>
                     </li>
                     <!-- admin functions -->
                     <li class="nav-item" ........................................>
-                        <a class="nav-link" aria-current="page" href="#!/termekek">Termékek</a>
+                        <a class="nav-link" aria-current="page" href="#!/termekek" ng-if="">Termékek</a>
                     </li>
                     <li class="nav-item" ........................................>
                         <a class="nav-link" aria-current="page" href="#!/felhasznalok">Felhasználók</a>
@@ -94,8 +92,8 @@
 
     <header class="container-fluid">
         <div class="container">
-            <h1>......................</h1>
-            <h3>......................</h3>
+            <h1>{{title}}</h1>
+            <h3>{{subtitle}}}<h3>
         </div>
     </header>
 
@@ -105,7 +103,7 @@
 
     <footer class="container-fluid">
         <div class="container">
-            .................................................
+            <p>{{company}} - {{author}}</p>
         </div>
     </footer>
 </body>

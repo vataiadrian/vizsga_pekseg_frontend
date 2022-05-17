@@ -10,6 +10,7 @@ app.controller('loginCtrl', function($scope, $rootScope, dbFactory, $location) {
                     $rootScope.loggedIn = true;
                     $rootScope.loggedUser = res.data[0];
                     sessionStorage.setItem('peksegUser', angular.toJson( $rootScope.loggedUser));
+
                 } else {
                     alert('Hibás belépési adatok!');
                 }
@@ -18,9 +19,10 @@ app.controller('loginCtrl', function($scope, $rootScope, dbFactory, $location) {
     }
 
     $scope.logout = function() {
-        sessionStorage.removeItem('peksegUser');
+        sessionStorage.removeItem('peksegJog');
         $rootScope.loggedUser = "";
         $rootScope.loggedIn = false;
+        $rootScope.jog = "";
         $location.path('#!/');
     }
 

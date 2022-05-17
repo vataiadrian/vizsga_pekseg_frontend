@@ -1,5 +1,5 @@
 app.factory('dbFactory', function($http, $q) {
-    let url = ..........................................;
+    let url = "192.168.88.252:5000";
     return {
         logincheck: function(tablename, email, pass) {
             let deferred = $q.defer();
